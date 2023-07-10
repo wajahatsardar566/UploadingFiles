@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <title>File Upload</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="fileUploadController">
+    <div class="container mt-5">
+        <h1>File Upload</h1>
+        <form enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="files" class="form-label">Choose Files</label>
+                <div class="input-group">
+                    <input type="file" id="files" ng-model="myFiles" multiple class="form-control">
+                    <label class="input-group-text" for="files">Browse</label>
+                </div>
+            </div>
+            <button ng-click="uploadFile()" class="btn btn-primary">Upload</button>
+        </form>
+
+        <div ng-if="filename" class="mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Response:</h5>
+                    <p class="card-text">Uploaded file: {{ filename }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script src="script.js"></script></body>
+
+</html>
